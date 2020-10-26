@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>PinnaSofts - @ViewBag.Title </title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @{Html.RenderPartial("~/Views/Shared/EditorTemplates/Headers.cshtml");}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style type="text/css">
+    
+        p
+        {
+            font-family: 'Bookman Old Style';
+        }
+        .form-group
+        {
+            margin-bottom: 0px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="navbar-wrapper">
+            <div class="container">
+                <div class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="~/Home">
+                                <label style="font-size: 24px; font-weight: bold; color: orange; font-family: 'Bookman Old Style';">PinnaSofts</label>
+                                &nbsp;&nbsp;&nbsp;<label style="font-size: 20px; font-weight: normal; color: lightgreen; font-family: 'Bookman Old Style';">Creative IT Solutions</label>
+                            </a>
+                           
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="~/Home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                                <li><a href="~/Home/#aboutus">About Us</a></li>
+                                <li><a href="~/Home/#contactus">Contact Us</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="http://pinnaface.com">PinnaFace</a></li>
+                                        <li><a href="#">PinnaStock</a></li>
+                                        <li><a href="#">PinnaRental</a></li>
+                                        <li><a href="#">PinnaFitNess</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Services <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Computer Maintenance</a></li>
+                                        <li><a href="#">Network Installation</a></li>
+                                        <li><a href="#">IT Consultancy </a></li>
+                                        <li><a href="#">Computer Training</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                            
+
+                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <p class="pull-right text-muted"><a href="#">Back to top</a></p>
+            <p class="text-muted">&copy; 2019 PinnaSofts IT Solutions, PLC. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </div>
+    </div>
+
+    <script type="text/javascript">// <![CDATA[
+        $(document).ready(function () {
+            function filterPath(string) {
+                return string
+                  .replace(/^\//, '')
+                  .replace(/(index|default).[a-zA-Z]{3,4}$/, '')
+                  .replace(/\/$/, '');
+            }
+            $('a[href*=#]').each(function () {
+                if (filterPath(location.pathname) == filterPath(this.pathname)
+                && location.hostname == this.hostname
+                && this.hash.replace(/#/, '')) {
+                    var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) + ']');
+                    var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+                    if ($target) {
+                        var targetOffset = $target.offset().top;
+                        $(this).click(function () {
+                            $('html, body').animate({ scrollTop: targetOffset }, 2000);
+                            return false;
+                        });
+                    }
+                }
+            });
+        });
+        // ]]></script>
+
+</body>
+</html>
